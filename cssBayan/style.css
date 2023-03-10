@@ -1,12 +1,73 @@
-.main-container {
-  max-width:700px;
-  margin: auto;
-  width: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  background-color: white;
 }
 
-.responsive-img {
+hr {
+  border: 1px solid lightgray;
+}
+
+.accordion {
+  padding: 1rem 0;
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+  transition: all 1s;
+}
+
+.tab {
+  box-sizing: border-box;
+}
+
+.tab input {
+  display: none;
+}
+
+img {
+  display: none;
+}
+
+.tab label {
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: block;
+  padding: 1rem 0;
+  width: 100%;
+  transition: all 1s;
+}
+
+.tab .content {
+  overflow: hidden;
+  max-height: 0;
+  transition: all 1s;
+}
+
+.tab input:checked ~ .content { 
+  max-height: 100vh;
+  transition: all 1s;
+}
+
+.tab input:checked ~ .content img { 
   display: block;
   height: auto;
   margin: auto;
   width: 50%;
+  transition: all 1s;
+}
+
+.tab label:before {
+  font-family: 'FontAwesome';
+  content: '\f067';
+  float: right;
+  transition: all 1s;
+}
+
+
+.tab input:checked+label:before {
+  font-family: 'FontAwesome';
+  content: '\f00d';
+  transition: all 1s;
 }
