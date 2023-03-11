@@ -14,8 +14,9 @@ hr {
   border: 1px solid lightgray;
 }
 
+/* ACCORDION */ 
 .accordion {
-  padding: 1rem 0;
+  padding: 1rem;
   width: 100%;
   max-width: 50rem;
   margin: 0 auto;
@@ -26,63 +27,52 @@ hr {
   color: black;
 }
 
-.tab {
-  box-sizing: border-box;
-}
-
-
-.tab input, .content img {
-  opacity: 0;
-  width: 50%;
+/* TAB */ 
+.tab input {
   display: none;
-
 }
 
 .tab label {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   cursor: pointer;
   display: block;
   padding: 1rem 0;
   width: 100%;
-
 }
 
 .tab input:checked ~ label { 
   color: black !important;
 }
 
-.content {
-  width: 100%;
+img {
+  opacity: 0;
+  width: 0;
+  height: 0;
   overflow: hidden;
-  max-height: 0;
-  transition: 0.5s;
+  transition: 0.4s;
+  margin: 0 auto;
+  display: block;
+
 }
 
- .tab input:checked ~ .content, .content img { 
+ .tab input:checked ~ label img { 
   opacity: 1;
-  max-height: 100%;
+  width: 25rem;
+  height: 25rem;
   display: block;
-  margin: auto;
-  padding: 0 0 1rem 0;
-  animation: fadeIn 0.3s;
-  /*  animation-delay: 0.5s; */
+  padding: 1rem 0 0 1rem;
+  margin: 0 auto;
+  animation: fadeIn 0.4s;
 }
 
-.tab input:checked ~ .content img {
-transform: scale(1);
-} 
-
-.tab input:hover ~ .content img {
-transform: scale(1);
-} 
-
-.accordion:hover .tab:hover .content{ 
-  max-height: 100%;
+.accordion:hover .tab:hover label img{ 
+  opacity: 1;
+  width: 25rem;
+  height: 25rem;
   display: block;
-  margin: auto;
-  padding: 0 0 1rem 0;
-  animation: fadeIn 0.3s;
-  /*  animation-delay: 0.5s; */ 
+  padding: 1rem 0 0 1rem;
+  margin: 0 auto;
+  animation: fadeIn 0.4s;
 }
 
 /* ICONS APPEAR ON HOVER */ 
@@ -99,6 +89,10 @@ transform: scale(1);
   transition: all 0.25s;
 }
 
+.tab input:hover+label:before {
+  transform: rotate(135deg);
+  transition: all 0.25s;
+} 
 
 /* ANIMATION RULES */ 
 @keyframes fadeIn {
