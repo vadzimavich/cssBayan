@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
 
+/* STYLE */
 body {
   font-family: 'Montserrat', sans-serif;
   color: #0059d9;
@@ -7,14 +8,13 @@ body {
 }
 
 h1 {
-  color: black !important;
+  color: #000000 !important;
 }
 
 hr {
-  border: 1px solid lightgray;
+  border: 1px solid #d3d3d3;
 }
 
-/* ACCORDION */ 
 .accordion {
   padding: 1rem;
   width: 100%;
@@ -23,11 +23,6 @@ hr {
   transition: all ease 0.25s;
 }
 
-.accordion:hover {
-  color: black;
-}
-
-/* TAB */ 
 .tab input {
   display: none;
 }
@@ -40,8 +35,10 @@ hr {
   width: 100%;
 }
 
-.tab input:checked ~ label { 
-  color: black !important;
+i {
+  float: right;
+  transition: all 0.25s;
+  opacity: 0;
 }
 
 img {
@@ -52,10 +49,18 @@ img {
   transition: 0.4s;
   margin: 0 auto;
   display: block;
-
 }
 
- .tab input:checked ~ label img { 
+/* ACTION*/
+.accordion:hover {
+  color: #000000;
+}
+
+.tab input:checked~label {
+  color: #000000 !important;
+}
+
+.tab input:checked~label img {
   opacity: 1;
   width: 25rem;
   height: 25rem;
@@ -65,7 +70,7 @@ img {
   animation: fadeIn 0.4s;
 }
 
-.accordion:hover .tab:hover label img{ 
+.tab:hover label img {
   opacity: 1;
   width: 25rem;
   height: 25rem;
@@ -75,24 +80,22 @@ img {
   animation: fadeIn 0.4s;
 }
 
-/* ICONS APPEAR ON HOVER */ 
-.accordion:hover label:before {
-  font-family: 'FontAwesome';
-  content: '\f067';
+.accordion:hover i {
   float: right;
   transition: all 0.25s;
   animation: fadeIn 0.3s;
+  opacity: 1;
 }
 
-.tab input:checked+label:before {
+.tab input:checked+label i {
   transform: rotate(135deg);
   transition: all 0.25s;
 }
 
-.tab input:hover+label:before {
+.tab input:hover+label i {
   transform: rotate(135deg);
   transition: all 0.25s;
-} 
+}
 
 /* ANIMATION RULES */ 
 @keyframes fadeIn {
