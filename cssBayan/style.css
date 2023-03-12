@@ -97,6 +97,10 @@ img {
   transition: all 0.25s;
 }
 
+.gingerkiss{
+  displey: none;
+}
+
 /* ANIMATION RULES */ 
 @keyframes fadeIn {
   0% { opacity: 0; }
